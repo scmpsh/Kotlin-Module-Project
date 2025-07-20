@@ -1,3 +1,5 @@
+import ui.ArchiveMenu
+
 fun main(args: Array<String>) {
-    println("Hello World!")
+    ArchiveMenu().showArchive()
 }
