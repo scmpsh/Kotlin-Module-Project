@@ -1,6 +1,7 @@
 package model
 
-data class Archive(
+class Archive(
     val title: String,
-    val notes: MutableList<Note>
-)
+) {
+    val notes: MutableList<Note> = mutableListOf()
+}

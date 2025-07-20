@@ -17,13 +17,13 @@ class ArchiveMenu {
                 }.toList())
             }
 
-            Menu.showMenu("\n### Список архивов: ###", menuItems, true)
+            showMenu("\n### Список архивов: ###", menuItems, true)
         }
     }
 
     fun createArchive() {
         val title = InputUtils.readNonEmptyLine("Введите название архива:")
-        archives.add(Archive(title, mutableListOf()))
+        archives.add(Archive(title))
         println("Архив \"$title\" создан")
     }
 }

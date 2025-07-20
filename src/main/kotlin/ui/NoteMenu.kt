@@ -17,7 +17,7 @@ class NoteMenu {
                 })
             }
 
-            val isReturn = Menu.showMenu("### Список заметок: ###", menuItems, false)
+            val isReturn = showMenu("### Список заметок: ###", menuItems, false)
             if (isReturn) break
         }
     }
@@ -30,16 +30,13 @@ class NoteMenu {
     }
 
     fun showNote(note: Note) {
+        val menu = mutableListOf(
+            MenuItem("Содержимое заметки") {
+                println("Содержимое заметки: ${note.content}")
+            }
+        )
         while (true) {
-            val isReturn = Menu.showMenu(
-                "Заметка: ${note.title}",
-                mutableListOf(
-                    MenuItem("Содержимое заметки") {
-                        println("Содержимое заметки: ${note.content}")
-                    }
-                ),
-                false
-            )
+            val isReturn = showMenu("Заметка: ${note.title}", menu, false)
             if (isReturn) break
         }
     }
